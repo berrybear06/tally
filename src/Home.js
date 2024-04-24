@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import Header from './Header';
@@ -11,8 +12,9 @@ const Home = () => {
 	const headerDescription = "A simple and easy way to learn math!";
 	return (
 		<div className="App">
+			{/*
 			<header className="App-header">
-				{/* <img src={logo} className="App-logo" alt="logo" /> */}
+				<img src={logo} className="App-logo" alt="logo" />
 				<p>
 					Edit <code>src/App.js</code> and save to reload.
 				</p>
@@ -25,8 +27,10 @@ const Home = () => {
 					Learn React
 				</a>
 			</header>
+			*/}
 	
-		<Header headerName={headerName} headerDescription={headerDescription} />
+			<Header headerName={headerName} headerDescription={headerDescription} />
+			
 			<div className="container-fluid">
 				<div className="button-row">
 					<div className="col-md-3 col-sm-6 col-xs-6">
