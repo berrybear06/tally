@@ -1,11 +1,15 @@
 import React from 'react';
 import Header from './Header';
+import AdditionGame from './AdditionGame';
 
 const Addition = () => {
 	const headerName = "Addition";
-	const headerDescription = "This is the page for the addition activity!";
+	const headerDescription = "Two-choices, single-digit problems.";
 	return (
-		<Header headerName={headerName} headerDescription={headerDescription} />
+		<div>
+			<Header headerName={headerName} headerDescription={headerDescription} />
+			<AdditionGame />
+		</div>
 	);
 };
 
