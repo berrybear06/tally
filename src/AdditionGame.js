@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import AdditionButton from './AdditionButton';
+import AnswerChoices from './AnswerChoices';
+import './Game.css';
 
 const AdditionActivity = () => {
 	// State variables
@@ -77,22 +78,26 @@ const AdditionActivity = () => {
 	};
 
 	return (
-		<div className="container">
+		<div className="container d-flex flex-column justify-content-between">
 			{/* Start button */}
-			<div className="text-center mt-5">
-				{num1 === null && (<button onClick={startActivity}>Start</button>)}
-			</div>
+			{num1 === null &&
+				(<div className="text-center">
+					<button onClick={startActivity}>Start</button>
+				</div>)
+			}
 			
 			{num1 !== null && (
-				<div className="mt-5">
+				<div>
 					{/* Addition problem */}
-					<h2 className="text-center">{num1} + {num2}</h2>
+					<h2 className="prompt-size-1 text-center">{num1} + {num2} =</h2>
 					
 					{/* Buttons */}
-					<div className="d-flex justify-content-between mt-3 mx-auto text-center" style={{ maxWidth: "100px" }}>
-						<AdditionButton value={answer1} correctAnswer={correctAnswer} selectedAnswer={selectedAnswer} clickHandler={handleButtonClick} />
-						<AdditionButton value={answer2} correctAnswer={correctAnswer} selectedAnswer={selectedAnswer} clickHandler={handleButtonClick} />
-					</div>
+					<AnswerChoices
+						answerList={[answer1, answer2]}
+						correctAnswer={correctAnswer}
+						selectedAnswer={selectedAnswer}
+						clickHandler={handleButtonClick}
+					/>
 					
 					{/* Next question button */}
 					{showNextButton && (
@@ -104,10 +109,11 @@ const AdditionActivity = () => {
 			)}
 
 			{/* Display counters */}
-			<div className="mt-5">
-				<p>Questions Attempted: {questionsAttempted}</p>
-				<p>Questions Correct: {questionsCorrect}</p>
+			{ questionsAttempted !== 0 && (
+			<div className="mt-3 text-center">
+				<p>Accuracy: {Math.round(100*questionsCorrect/questionsAttempted)}% ({questionsCorrect}/{questionsAttempted})</p>
 			</div>
+			)}
 		</div>
 	);
 };

@@ -1,0 +1,9 @@
+.answer-choice-row {
+	width: calc(100px + 12vw);
+}
+
+div.answer-choice-row button {
+	min-width: calc(100px + 5vw);
+	min-height: calc(100px + 5vw);
+	padding: 0;
+}
