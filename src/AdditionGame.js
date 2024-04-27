@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AdditionButton from './AdditionButton';
 
 const AdditionActivity = () => {
 	// State variables
@@ -14,10 +15,10 @@ const AdditionActivity = () => {
 	const [answer1, setAnswer1] = useState(null);
 	const [answer2, setAnswer2] = useState(null);
 	
+	// useEffect ensures that dependencies num1, num2, correctAnswer are up-to-date
 	useEffect(() => {
 		if (num1 !== null) {
 			setCorrectAnswer(num1+num2);
-			console.log(correctAnswer);
 			
 			var incorrectAnswer = getRandomInt(0, 9);
 			while (incorrectAnswer === correctAnswer) {
@@ -52,10 +53,6 @@ const AdditionActivity = () => {
 			setNum1(result);
 			setNum2(addend-result)
 		}
-		
-		
-		
-		
 		setSelectedAnswer(null);
 		setShowNextButton(false);
 	};
@@ -81,27 +78,23 @@ const AdditionActivity = () => {
 
 	return (
 		<div className="container">
+			{/* Start button */}
 			<div className="text-center mt-5">
 				{num1 === null && (<button onClick={startActivity}>Start</button>)}
 			</div>
-
+			
 			{num1 !== null && (
 				<div className="mt-5">
+					{/* Addition problem */}
 					<h2 className="text-center">{num1} + {num2}</h2>
+					
+					{/* Buttons */}
 					<div className="d-flex justify-content-between mt-3 mx-auto text-center" style={{ maxWidth: "100px" }}>
-						<button
-							className={`btn btn-lg ${selectedAnswer !== null ? (answer1 === correctAnswer ? 'btn-success' : 'btn-danger') : 'btn-primary'}`}
-							onClick={() => handleButtonClick(answer1)}
-						>
-							{answer1}
-						</button>
-						<button
-							className={`btn btn-lg ${selectedAnswer !== null ? (answer2 === correctAnswer ? 'btn-success' : 'btn-danger') : 'btn-primary'}`}
-							onClick={() => handleButtonClick(answer2)}
-						>
-							{answer2}
-						</button>
+						<AdditionButton value={answer1} correctAnswer={correctAnswer} selectedAnswer={selectedAnswer} clickHandler={handleButtonClick} />
+						<AdditionButton value={answer2} correctAnswer={correctAnswer} selectedAnswer={selectedAnswer} clickHandler={handleButtonClick} />
 					</div>
+					
+					{/* Next question button */}
 					{showNextButton && (
 						<div className="text-center mt-3">
 							<button onClick={resetActivity}>Next Question</button>

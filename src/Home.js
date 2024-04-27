@@ -35,17 +35,17 @@ const Home = () => {
 				<div className="button-row">
 					<div className="col-md-3 col-sm-6 col-xs-6">
 						<Link to="/addition">
-							<Button title="Activity 1" imageSrc="assets/icons/plus.png" /> {/* images go in tally/src; no ./ preceding paths */}
+							<Button title="Addition" imageSrc="assets/icons/plus.png" /> {/* images go in tally/src; no ./ preceding paths */}
 						</Link>
 					</div>
 					<div className="col-md-3 col-sm-6 col-xs-6">
-						<Button title="Activity 2" imageSrc="assets/icons/plus.png" />
+						<Button title="Subtraction" imageSrc="assets/icons/minus.png" />
 					</div>
 					<div className="col-md-3 col-sm-6 col-xs-6">
-						<Button title="Activity 3" imageSrc="assets/icons/plus.png" />
+						<Button title="Money Math" imageSrc="assets/icons/money.png" />
 					</div>
 					<div className="col-md-3 col-sm-6 col-xs-6">
-						<Button title="Activity 4" imageSrc="assets/icons/plus.png" />
+						<Button title="C-V-C Words" imageSrc="assets/icons/book.png" />
 					</div>
 				</div>
 			</div>

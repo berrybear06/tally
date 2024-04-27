@@ -5,7 +5,7 @@
 
 .button-row Button {
 	width: 90%;
-	font-size: calc(10px + 3vmin);
+	font-size: 2vw;
 }
 
 .button-row img {
