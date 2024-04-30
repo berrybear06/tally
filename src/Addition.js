@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import Game from './Game';
 import AdditionGame from './AdditionGame';
 
 const Addition = () => {
@@ -8,7 +9,7 @@ const Addition = () => {
 	return (
 		<div>
 			<Header headerName={headerName} headerDescription={headerDescription} />
-			<AdditionGame />
+			<Game questionGenerator={AdditionGame} />
 		</div>
 	);
 };
