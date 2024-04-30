@@ -1,7 +1,20 @@
 .button-row {
-	margin: 0px 80px;
+	margin: 0px 4vw;
 }
 
 .button-row Button {
-	/* margin-top: 20px; */
+	margin-bottom: 20px;
+	font-size: 8vw;
+}
+
+@media (min-width: 576px) {
+	.button-row Button {
+		font-size: 4vw;
+	}
+}
+
+@media (min-width: 768px) {
+	.button-row Button {
+		font-size: 2vw;
+	}
 }
