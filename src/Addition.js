@@ -4,12 +4,11 @@ import Game from './Game';
 import AdditionGame from './games/AdditionGame';
 
 const Addition = () => {
-	const headerName = "Addition";
-	const headerDescription = "Two-choices, single-digit problems.";
+	const flavorText = "Two-choices, single-digit problems.";
 	return (
 		<div>
-			<Header headerName={headerName} headerDescription={headerDescription} />
-			<Game questionGenerator={AdditionGame} />
+			<h1 class="text-center mt-5 mb-4">Addition</h1>
+			<Game questionGenerator={AdditionGame} flavorText="Two-choices, single-digit problems." />
 		</div>
 	);
 };

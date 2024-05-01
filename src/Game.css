@@ -9,3 +9,8 @@
 .container {
 	height: 70vh;
 }
+
+.container > * {
+	text-align: center;
+	align-items: center;
+}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AnswerChoices from './AnswerChoices';
 import './Game.css';
 
-const Game = ({ questionGenerator }) => {
+const Game = ({ questionGenerator, flavorText }) => {
 	// State variables
 	const [question, setQuestion] = useState(null);
 	const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -44,6 +44,9 @@ const Game = ({ questionGenerator }) => {
 	
 	return (
 		<div className="container d-flex flex-column justify-content-between">
+			{flavorText && !gameStarted && (
+				<p className="text-center">{flavorText}</p>
+			)}
 			{/* Start button */}
 			{!gameStarted &&
 				(<div className="text-center">
@@ -66,13 +69,11 @@ const Game = ({ questionGenerator }) => {
 					
 					{/* Next question button */}
 					{showNextButton && (
-						<div className="text-center mt-3">
-							<button onClick={nextQuestion}>Next Question</button>
-						</div>
+							<button onClick={nextQuestion} className="mt-3">Next Question</button>
 					)}
 				</div>
 			)}
-
+			
 			{/* Display counters */}
 			{questionsAttempted !== 0 && (
 			<div className="mt-3 text-center">
