@@ -1,4 +1,4 @@
-const AdditionGenerator = () => {
+const AdditionGame = (answerCount) => {
 	// Function to generate a random integer between min and max (inclusive)
 	const getRandomInt = (min, max) => {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -19,17 +19,13 @@ const AdditionGenerator = () => {
 	}
 	
 	const correctAnswer = num1 + num2;
-	
-	let incorrectAnswer = getRandomInt(0, 9);
-	while (incorrectAnswer === correctAnswer) {
-		incorrectAnswer = getRandomInt(0, 9);
-	}
-	
-	const answerList = [];
-	if (getRandomInt(0, 1) === 1) {
-		answerList.push(correctAnswer, incorrectAnswer);
-	} else {
-		answerList.push(incorrectAnswer, correctAnswer);
+	const answerList = [correctAnswer];
+	for (let k = 0; k < answerCount - 1; k++) {
+		let incorrectAnswer = getRandomInt(0, 9);
+		while (answerList.includes(incorrectAnswer)) {
+			incorrectAnswer = getRandomInt(0, 9);
+		}
+		answerList.push(incorrectAnswer);
 	}
 	
 	return {
@@ -39,4 +35,4 @@ const AdditionGenerator = () => {
 	};
 };
 
-export default AdditionGenerator;
+export default AdditionGame;

@@ -3,6 +3,14 @@ import AnswerChoices from './AnswerChoices';
 import './Game.css';
 
 const Game = ({ questionGenerator, flavorText }) => {
+	// Function to shuffle array
+	const shuffle = (array) => {
+		for (let i = array.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[array[i], array[j]] = [array[j], array[i]];
+		}
+	};
+	
 	// State variables
 	const [question, setQuestion] = useState(null);
 	const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -10,6 +18,7 @@ const Game = ({ questionGenerator, flavorText }) => {
 	const [questionsCorrect, setQuestionsCorrect] = useState(0);
 	const [showNextButton, setShowNextButton] = useState(false);
 	const [gameStarted, setGameStarted] = useState(false);
+	const [streak, setStreak] = useState(0);
 	
 	const handleButtonClick = (answer) => {
 		if (selectedAnswer === null) {
@@ -20,6 +29,9 @@ const Game = ({ questionGenerator, flavorText }) => {
 			setQuestionsAttempted(questionsAttempted + 1);
 			if (answer === question.correctAnswer) {
 				setQuestionsCorrect(questionsCorrect + 1);
+				setStreak(streak + 1);
+			} else {
+				setStreak(0);
 			}
 		}
 	};
@@ -34,7 +46,8 @@ const Game = ({ questionGenerator, flavorText }) => {
 	
 	const nextQuestion = () => {
 		// Call question generator to generate problem
-		const newQuestion = questionGenerator();
+		const newQuestion = questionGenerator(streak >= 3 ? 3 : 2)
+		shuffle(newQuestion.answerList);
 		setQuestion(newQuestion);
 		
 		// Reset other states
