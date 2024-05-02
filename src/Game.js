@@ -56,7 +56,7 @@ const Game = ({ questionGenerator, flavorText }) => {
 	}
 	
 	return (
-		<div className="container d-flex flex-column justify-content-between">
+		<div className={`container d-flex flex-column ${gameStarted ? 'justify-content-between' : ''}`}>
 			{flavorText && !gameStarted && (
 				<p className="text-center">{flavorText}</p>
 			)}

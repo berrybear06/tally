@@ -1,17 +1,17 @@
 import React from 'react';
 import Game from './Game';
 import { Link } from 'react-router-dom';
-import AdditionGame from './games/AdditionGame';
+import SubtractionGame from './games/SubtractionGame';
 
-const Addition = () => {
+const Subtraction = () => {
 	const flavorText = "Two-choices, single-digit problems.";
 	return (
 		<div>
 			<Link to="/"><p className="text-center mt-3 home-link">Back to Home</p></Link>
-			<h1 className="text-center mt-3 mb-4">Addition</h1>
-			<Game questionGenerator={AdditionGame} flavorText={flavorText} />
+			<h1 className="text-center mt-3 mb-4">Subtraction</h1>
+			<Game questionGenerator={SubtractionGame} flavorText={flavorText} />
 		</div>
 	);
 };
 
-export default Addition;
+export default Subtraction;

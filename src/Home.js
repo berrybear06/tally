@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import Header from './Header';
 import Button from './Button';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
 	const headerName = "Tally";
@@ -15,20 +14,10 @@ const Home = () => {
 			
 			<div className="container-fluid">
 				<div className="button-row">
-					<div className="col-md-3 col-sm-6 col-xs-6">
-						<Link to="/addition">
-							<Button title="Addition" imageSrc="assets/icons/plus.png" /> {/* images go in tally/src; no ./ preceding paths */}
-						</Link>
-					</div>
-					<div className="col-md-3 col-sm-6 col-xs-6">
-						<Button title="Subtraction" imageSrc="assets/icons/minus.png" disabled="true"/>
-					</div>
-					<div className="col-md-3 col-sm-6 col-xs-6">
-						<Button title="Money Math" imageSrc="assets/icons/money.png" disabled="true"/>
-					</div>
-					<div className="col-md-3 col-sm-6 col-xs-6">
-						<Button title="C-V-C Words" imageSrc="assets/icons/book.png" disabled="true"/>
-					</div>
+					<Button title="Addition" imageSrc="assets/icons/plus.png" linkTo="/addition" /> {/* images go in tally/src; no ./ preceding paths */}
+					<Button title="Subtraction" imageSrc="assets/icons/minus.png" linkTo="/subtraction" />
+					<Button title="Money Math" imageSrc="assets/icons/money.png" />
+					<Button title="C-V-C Words" imageSrc="assets/icons/book.png" />
 				</div>
 			</div>
 			<footer>
