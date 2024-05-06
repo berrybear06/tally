@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Home from './Home';
 import Addition from './Addition';
 import Subtraction from './Subtraction';
+// import MoneyMath from './MoneyMath';
+import CVCWords from './CVCWords';
 
 function App() {
 	return (
@@ -11,6 +13,8 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path="/addition" element={<Addition />} />
 				<Route path="/subtraction" element={<Subtraction />} />
+				{/* <Route path="/moneymath" element={<MoneyMath />} /> */}
+				<Route path="/cvcwords" element={<CVCWords />} />
 				<Route path="*" element={<Navigate to="/" />} />
 			</Routes>
 		</Router>

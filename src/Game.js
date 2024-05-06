@@ -70,7 +70,8 @@ const Game = ({ questionGenerator, flavorText }) => {
 			{gameStarted && (
 				<div>
 					{/* Addition problem */}
-					<h2 className="prompt-size-1 text-center">{question.question}</h2>
+					{/* question.question.objImage && <img src={require(`./${question.question.objImage}`)} alt="Question" /> */}
+					{question.question.objText && (<h2 className="prompt-size-1 text-center">{question.question.objText}</h2>)}
 					
 					{/* Buttons */}
 					<AnswerChoices

@@ -1,3 +1,5 @@
+import GameObject from '../GameObject';
+
 const AdditionGame = (answerCount) => {
 	// Function to generate a random integer between min and max (inclusive)
 	const getRandomInt = (min, max) => {
@@ -19,17 +21,19 @@ const AdditionGame = (answerCount) => {
 	}
 	
 	const correctAnswer = num1 + num2;
-	const answerList = [correctAnswer];
+	const answerList = [GameObject({objText: correctAnswer})];
+	const prevAnswers = [correctAnswer];
 	for (let k = 0; k < answerCount - 1; k++) {
 		let incorrectAnswer = getRandomInt(0, 9);
-		while (answerList.includes(incorrectAnswer)) {
+		while (prevAnswers.includes(incorrectAnswer)) {
 			incorrectAnswer = getRandomInt(0, 9);
 		}
-		answerList.push(incorrectAnswer);
+		answerList.push(GameObject({objText: incorrectAnswer}));
+		prevAnswers.push(incorrectAnswer);
 	}
 	
 	return {
-		question: `${num1} + ${num2} =`,
+		question: GameObject({objText: `${num1} + ${num2} =`}),
 		answerList: answerList,
 		correctAnswer: correctAnswer
 	};

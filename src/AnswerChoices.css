@@ -1,25 +1,42 @@
 div.answer-choice-row {
-	width: calc(100px + 12vw);
+	width: 100%;
+}
+
+div.answer-choice-row div {
+	position: relative;
 }
 
 div.answer-choice-row button {
 	min-width: calc(100px + 5vw);
 	min-height: calc(100px + 5vw);
-	padding: 0;
 }
 
 div.answer-choice-row button.button-correct {
 	font-weight: bold;
 }
 
-div.answer-choice-row button.button-incorrect {
+div.answer-choice-row button.button-incorrect:not(.btn-image) {
 	color: #cccccc;
+}
+
+div.answer-choice-row button img {
+	width: 90%;
+}
+
+div.answer-choice-row button.btn-image {
+	border-color: black;
+	border-width: 2px;
+	max-width: 20vw;
+}
+
+div.answer-choice-row button.btn-image p {
+	margin: 0px;
 }
 
 .x-mark {
 	position: absolute;
 	width: 90%;
-	height: 100%;
 	left: 5%;
+	top: 0;
 	object-fit: contain;
 }

@@ -1,13 +1,14 @@
 .prompt-size-1 {
-	font-size: calc(40px + 6vw);
+	font-size: calc(40px + 6vh);
 }
 
 .prompt-size-2 {
-	font-size: calc(30px + 4.5vw);
+	font-size: calc(20px + 3vh);
 }
 
 .container {
-	height: 70vh;
+	min-height: 70vh;
+	margin-bottom: 80px;
 }
 
 .container > * {
