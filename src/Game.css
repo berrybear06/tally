@@ -1,9 +1,9 @@
 .prompt-size-1 {
-	font-size: calc(40px + 6vh);
+	font-size: calc(40px + 8vh);
 }
 
 .prompt-size-2 {
-	font-size: calc(20px + 3vh);
+	font-size: calc(20px + 4vh);
 }
 
 .container {

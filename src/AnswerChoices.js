@@ -9,7 +9,7 @@ const AnswerChoices = ({ answerList, correctAnswer, selectedAnswer, clickHandler
 				<div key={index}>
 					<button
 						className={
-							`prompt-size-1 btn btn-lg mx-2 ${answerObject.objImage === null ? 'btn-primary' : 'btn-image'} ${
+							`btn btn-lg mx-2 ${answerObject.objImage !== undefined ? 'btn-image' : 'btn-primary'} ${
 							selectedAnswer !== null ? (answerObject.objText === correctAnswer ? 'button-correct' : 'button-incorrect') : ''
 							}`
 						}
@@ -21,7 +21,7 @@ const AnswerChoices = ({ answerList, correctAnswer, selectedAnswer, clickHandler
 								{(selectedAnswer !== null && <p className="prompt-size-2">{answerObject.objText}</p>)}
 							</div>
 						) : (
-							<p className="prompt-size-2">{answerObject.objText}</p>
+							<p className="prompt-size-1">{answerObject.objText}</p>
 						)}
 						
 					</button>
