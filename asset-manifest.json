@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/tally/static/css/main.9af5da64.css",
-    "main.js": "/tally/static/js/main.7abdce40.js",
-    "static/js/453.616ff712.chunk.js": "/tally/static/js/453.616ff712.chunk.js",
+    "main.css": "/tally/static/css/main.d755a49c.css",
+    "main.js": "/tally/static/js/main.669d6ed3.js",
+    "static/js/882.aa44819e.chunk.js": "/tally/static/js/882.aa44819e.chunk.js",
     "static/media/rag.png": "/tally/static/media/rag.5dfcd6993c921cf533fe.png",
     "static/media/ham.png": "/tally/static/media/ham.c38f781f56106d4b2662.png",
     "static/media/cat.png": "/tally/static/media/cat.5ca55e0d41c128edfb5a.png",
@@ -92,12 +92,12 @@
     "static/media/set.png": "/tally/static/media/set.77276b05a1dec5a8a720.png",
     "static/media/logo.svg": "/tally/static/media/logo.6ce24c58023cc2f8fd88.svg",
     "index.html": "/tally/index.html",
-    "main.9af5da64.css.map": "/tally/static/css/main.9af5da64.css.map",
-    "main.7abdce40.js.map": "/tally/static/js/main.7abdce40.js.map",
-    "453.616ff712.chunk.js.map": "/tally/static/js/453.616ff712.chunk.js.map"
+    "main.d755a49c.css.map": "/tally/static/css/main.d755a49c.css.map",
+    "main.669d6ed3.js.map": "/tally/static/js/main.669d6ed3.js.map",
+    "882.aa44819e.chunk.js.map": "/tally/static/js/882.aa44819e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9af5da64.css",
-    "static/js/main.7abdce40.js"
+    "static/css/main.d755a49c.css",
+    "static/js/main.669d6ed3.js"
   ]
 }
