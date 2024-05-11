@@ -56,19 +56,17 @@ const Game = ({ questionGenerator, flavorText }) => {
 	}
 	
 	return (
-		<div className={`container d-flex flex-column ${gameStarted ? 'justify-content-between' : ''}`}>
-			{flavorText && !gameStarted && (
-				<p className="text-center">{flavorText}</p>
-			)}
+		<div className="container d-flex flex-column text-center">
 			{/* Start button */}
 			{!gameStarted &&
-				(<div className="text-center">
+				(<div>
+					{flavorText && (<p>{flavorText}</p>)}
 					<button onClick={startGame}>Start</button>
 				</div>)
 			}
 			
 			{gameStarted && (
-				<div>
+				<div id={question.answerList[0].objImage ? "adjust-height-image" : "adjust-height-text"}>
 					{/* Addition problem */}
 					{/* question.question.objImage && <img src={require(`./${question.question.objImage}`)} alt="Question" /> */}
 					{question.question.objText && (<h2 className="prompt-size-1 text-center">{question.question.objText}</h2>)}

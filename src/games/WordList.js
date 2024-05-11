@@ -6,6 +6,6 @@ const wordString = `
 	bug mug pug sun nut rug cut fun gum tug cup pup mud tub run bun
 `;
 
-const wordList = wordString.split(/\s+/).filter((word) => word != '');
+const wordList = wordString.split(/\s+/).filter((word) => word !== '');
 
 export default wordList;

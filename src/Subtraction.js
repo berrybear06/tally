@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Game from './Game';
 import { Link } from 'react-router-dom';
 import SubtractionGame from './games/SubtractionGame';
 
 const Subtraction = () => {
+	useEffect(() => {
+		document.title = "Subtraction";
+	}, []);
+	
 	const flavorText = "Two-choices, single-digit problems.";
 	return (
 		<div>

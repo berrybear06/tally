@@ -1,17 +1,23 @@
 .prompt-size-1 {
-	font-size: calc(40px + 8vh);
+	font-size: calc(40px + 4vw);
 }
 
 .prompt-size-2 {
-	font-size: calc(20px + 4vh);
+	font-size: calc(20px + 2vw);
 }
 
 .container {
 	min-height: 70vh;
-	margin-bottom: 80px;
 }
 
 .container > * {
-	text-align: center;
 	align-items: center;
+}
+
+#adjust-height-text {
+	min-height: calc(250px + 10vh + 5vw);
+}
+
+#adjust-height-image {
+	min-height: calc(55px + 18vh + 23vw);
 }

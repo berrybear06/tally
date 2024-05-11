@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Game from './Game';
 import { Link } from 'react-router-dom';
 import CVCWordsGame from './games/CVCWordsGame';
 
 const CVCWords = () => {
+	useEffect(() => {
+		document.title = "C-V-C Words";
+	}, []);
+	
 	const flavorText = "Matching words to pictures, or vice versa.";
 	return (
 		<div>

@@ -1,11 +1,15 @@
 import './App.css';
 import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './Header';
 import Button from './Button';
 
 const Home = () => {
+	useEffect(() => {
+		document.title = "Tally";
+	}, []);
+	
 	const headerName = "Tally";
 	const headerDescription = "A simple and easy way to learn math!";
 	return (
