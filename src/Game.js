@@ -19,6 +19,7 @@ const Game = ({ questionGenerator, flavorText, showToggle }) => {
 	const [showNextButton, setShowNextButton] = useState(false);
 	const [gameStarted, setGameStarted] = useState(false);
 	const [streak, setStreak] = useState(0);
+	const [toggle, setToggle] = useState(false);
 	
 	const handleButtonClick = (answer) => {
 		if (selectedAnswer === null) {
@@ -55,6 +56,10 @@ const Game = ({ questionGenerator, flavorText, showToggle }) => {
 		setShowNextButton(false);
 	}
 	
+	const toggleDisplay = () => {
+		setToggle(toggle ? false : true);
+	}
+	
 	return (
 		<div className="container d-flex flex-column text-center">
 			{/* Start button */}
@@ -69,13 +74,17 @@ const Game = ({ questionGenerator, flavorText, showToggle }) => {
 				<div className={`position-relative ${question.answerList[0].objImage ? "adjust-height-image" : "adjust-height-text"}`}>
 					{/* Toggle button */}
 					{showToggle && (
-						<button id="btn-toggle" className="btn position-absolute mx-2">
+						<button id="btn-toggle" className="btn position-absolute mx-2" onClick={toggleDisplay}>
 							Toggle Displays
 						</button>
 					)}
 					{/* Question */}
-					{/* question.question.objImage && <img src={require(`./${question.question.objImage}`)} alt="Question" /> */}
-					{question.question.objText && (<h2 className="prompt-size-1 text-center">{question.question.objText}</h2>)}
+					{question.question.objImage && toggle &&
+						<img src={require(`./${question.question.objImage}`)} alt="Question" className="q-img" />
+					}
+					{question.question.objText && !toggle &&
+						<h2 className="prompt-size-1 text-center">{question.question.objText}</h2>
+					}
 					
 					{/* Buttons */}
 					<AnswerChoices
@@ -83,6 +92,7 @@ const Game = ({ questionGenerator, flavorText, showToggle }) => {
 						correctAnswer={question.correctAnswer}
 						selectedAnswer={selectedAnswer}
 						clickHandler={handleButtonClick}
+						toggleDisplay={toggle}
 					/>
 					
 					{/* Next question button */}

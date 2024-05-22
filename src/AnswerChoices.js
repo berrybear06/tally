@@ -2,7 +2,11 @@ import React from 'react';
 import './AnswerChoices.css';
 import XMark from './assets/icons/x-mark.png';
 
-const AnswerChoices = ({ answerList, correctAnswer, selectedAnswer, clickHandler }) => {
+const AnswerChoices = ({ answerList, correctAnswer, selectedAnswer, clickHandler, toggleDisplay }) => {
+	// Not toggled: images default, text when answered
+	// Toggled: text default, images when answered
+	const displayImage = !toggleDisplay || selectedAnswer !== null;
+	const displayText = toggleDisplay || selectedAnswer !== null;
 	return (
 		<div className="d-flex justify-content-center mt-3 mx-auto text-center answer-choice-row">
 			{answerList.map((answerObject, index) => (
@@ -17,8 +21,12 @@ const AnswerChoices = ({ answerList, correctAnswer, selectedAnswer, clickHandler
 					>
 						{answerObject.objImage ? (
 							<div>
-								<img src={require(`./${answerObject.objImage}`)} alt={`Answer choice ${index+1}`} className="" />
-								{(selectedAnswer !== null && <p className="prompt-size-2 m-0">{answerObject.objText}</p>)}
+								{displayImage && 
+									<img src={require(`./${answerObject.objImage}`)} alt={`Answer choice ${index+1}`} className="" />
+								}
+								{displayText &&
+									<p className="prompt-size-2 m-0">{answerObject.objText}</p>
+								}
 							</div>
 						) : (
 							<p className="prompt-size-1">{answerObject.objText}</p>
