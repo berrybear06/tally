@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AnswerChoices from './AnswerChoices';
 import './Game.css';
 
-const Game = ({ questionGenerator, flavorText }) => {
+const Game = ({ questionGenerator, flavorText, showToggle }) => {
 	// Function to shuffle array
 	const shuffle = (array) => {
 		for (let i = array.length - 1; i > 0; i--) {
@@ -66,8 +66,14 @@ const Game = ({ questionGenerator, flavorText }) => {
 			}
 			
 			{gameStarted && (
-				<div id={question.answerList[0].objImage ? "adjust-height-image" : "adjust-height-text"}>
-					{/* Addition problem */}
+				<div className={`position-relative ${question.answerList[0].objImage ? "adjust-height-image" : "adjust-height-text"}`}>
+					{/* Toggle button */}
+					{showToggle && (
+						<button id="btn-toggle" className="btn position-absolute mx-2">
+							Toggle Displays
+						</button>
+					)}
+					{/* Question */}
 					{/* question.question.objImage && <img src={require(`./${question.question.objImage}`)} alt="Question" /> */}
 					{question.question.objText && (<h2 className="prompt-size-1 text-center">{question.question.objText}</h2>)}
 					

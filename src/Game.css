@@ -14,10 +14,18 @@
 	align-items: center;
 }
 
-#adjust-height-text {
+.adjust-height-text {
 	min-height: calc(250px + 10vh + 5vw);
 }
 
-#adjust-height-image {
+.adjust-height-image {
 	min-height: calc(55px + 18vh + 23vw);
+}
+
+#btn-toggle {
+	top: 0;
+	right: 0;
+	border-color: black;
+	border-width: 2px;
+	font-size: calc(5px + 0.5vw);
 }

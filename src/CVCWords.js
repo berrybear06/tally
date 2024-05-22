@@ -13,7 +13,7 @@ const CVCWords = () => {
 		<div>
 			<Link to="/"><p className="text-center mt-3 home-link">Back to Home</p></Link>
 			<h1 className="text-center mt-3">C-V-C Words</h1>
-			<Game questionGenerator={CVCWordsGame} flavorText={flavorText} />
+			<Game questionGenerator={CVCWordsGame} flavorText={flavorText} showToggle={true}/>
 		</div>
 	);
 };
